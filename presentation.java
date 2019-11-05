@@ -1,18 +1,19 @@
-package Chapter9;
+package chapter9;
 
 import java.util.*;
 
-// Patrick and Benjamin Presentation has:
-// 2 loops minimum
-//1 enhanced, and 1 traditional
-// if else statement 
-// instantiates a new array
-// has a randomizer
+//- Presentation :
+//-Take an input from the user which is 5 number between 1 - 10
+//-Use randomizer to find 5 numbers in between 1 - 10 and store them in an array
+//-enhanced loop to check every number in the array to see if it matches the ones the user inputs
+//-If statements inside for loop to check if they match
 
 	public class presentation {
 		public static void main(String[] args) {
+			
 			//creates scanner
 			Scanner scan = new Scanner(System.in);
+			
 			//the ints
 			int count = 0;
 			int count2 = 0;
@@ -38,10 +39,10 @@ import java.util.*;
 			//prints the 2 arrays from array to string 
 			System.out.println(Arrays.toString(array2));
 			System.out.println(Arrays.toString(array3));
-			while(count2 < 5) {
-				
+			
+			while(count2 < 5) {	
 				//input numbers via scanner up to amount of numbers in the array
-				System.out.print("What is your guess: ");
+				System.out.print("What is your GUESS: ");
 				int number = scan.nextInt();
 				for(int i : array2) {
 					if ((int)i == number) {
@@ -55,25 +56,24 @@ import java.util.*;
 			System.out.println("Score " + score);
 			
 			//if score is equal to or greater to 10 then print won jackpot 10mil
-			if(score >= 10) {
+			if(score >= 4) {
 				System.out.println("You WON the JACKPOT $10,000,000!!!!");
-				System.out.println();
 			}
 			
 			//if score is equal to or greater then to 5 then print 1mil
-			else if(score >= 5) {
+			else if(score >= 2) {
 				System.out.println("You WON $1,000,000!!!!!");
-				System.out.println();
 			}
 			
 			//if score is less than 5 then print you lose and try again
-			else if(score < 5) {
+			else if(score <= 1) {
 				System.out.println("You LOSE!!! :(");
 				System.out.println("TRY AGAIN");
-				System.out.println();
+				System.exit(0);
 			}
 
 			//after print is done then println chance to double money if number = one on array + is a next int
+			System.out.println("------------------------------------");
 			System.out.println("CHANCE TO DOUBLE YOUR MONEY");
 			System.out.println("PICK A NUMBER OUT FROM 0 TO 10");
 			System.out.print("GUESS: ");
@@ -83,39 +83,24 @@ import java.util.*;
 					dub++;
 				}
 			}
-			//prints the double ????
-			System.out.println("Double" + dub);
 			
-			//prints the array after the double is inputd
-			String asdaa = Arrays.toString(array2);
-			System.out.println(asdaa);
-			System.out.println("Maybe next time you win :)");
+			//if chance to double is greater or less than 4 then print 20mil
+			if(dub >= 1 & score >= 4) {
+				System.out.println("Congrats YOU WON the DOUBLE JACKPOT $20,000,000!!!!");
+				System.out.println();
+			}
+			//if chance is equal to or greater than 2 then print 2 mil doubled
+			else if(dub >= 1 & score >= 2) {
+				System.out.println("You DOUBLED AND WON $2,000,000!!!!!");
+				System.out.println();
+			}
+			//if score less than 1 then prints did not double and maybe next time.
+			if(dub < 1) {
+				System.out.println("You did not DOUBLE your earnings! Maybe next time :)");
+			}
 			
 			//scanner closes
 			scan.close();
-			
-			
-			
+
 		}
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
