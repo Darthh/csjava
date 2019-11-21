@@ -1,24 +1,32 @@
-package chapter5;
+package chapter9;
 
 import java.util.*;
-import java.util.Arrays;
-
 
 public class TestingArrays {
 
 	public static void main(String[] args) {
-
-	    int[] a = new int[5];
-
-        a[0] = 1;
-        a[1] = 2;
-        a[2] = 3;
-        a[3] = 4;
-        a[4] = 5;
-
-        System.out.println(Arrays.toString(a));
-        
-		}
+		//double[] pat = new double[1028];
 		
-	}
+		Scanner scan = new Scanner(System.in);
+		
+		String[][]studentSeating = new String[5][4];
+		
+		int count = 0;
+		for(int row = 0; row < studentSeating.length; row++)  {
+			for(int col = 0; col < studentSeating[row].length; col++ ) {
+				studentSeating[row][col] = scan.nextLine();
+			}
+			System.out.println();
+		}
+		//System.out.println(studentSeating[0][0]);
+
+	System.out.println(Arrays.toString(studentSeating[0]));
+	System.out.println(Arrays.toString(studentSeating[1]));
+	System.out.println(Arrays.toString(studentSeating[2]));
+	System.out.println(Arrays.toString(studentSeating[3]));
+	System.out.println(Arrays.toString(studentSeating[4]));
 	
+	System.out.println(studentSeating[5][1]);
+	}
+
+}
