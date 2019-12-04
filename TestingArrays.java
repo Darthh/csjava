@@ -26,7 +26,7 @@ public class TestingArrays {
 	System.out.println(Arrays.toString(studentSeating[3]));
 	System.out.println(Arrays.toString(studentSeating[4]));
 	
-	System.out.println(studentSeating[5][1]);
+	System.out.println(studentSeating[4][1]);
 	}
 
 }
