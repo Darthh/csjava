@@ -7,13 +7,6 @@ public class ArrayList_Intro {
 	public static void main(String[] args)
 	{
 		
-		int myArray[] = new int[5];
-		for(int i: myArray)
-		{
-			System.out.println(i + " ");
-		}
-		
-		
 		ArrayList<String>spongebob = new ArrayList<String>();
 		spongebob.add("Patrick Star");
 		spongebob.add("Squidward Tentacles");
@@ -53,25 +46,6 @@ public class ArrayList_Intro {
 			spongebob.clear();
 			System.out.println(spongebob);
 		
-			ArrayList<String> list = new ArrayList<String>();
-			list.add("Four");
-			list.add("score");
-			list.add("and");
-			list.add("seven");
-			list.add("years");
-			
-			//Create a method which duplicates each value on the original
-			//ArrayList and call the method: stutter
-			
-			mlafs;
-			
-			
-			
-			
-			
-			
-			
-			
 	}
 
 }
