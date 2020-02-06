@@ -28,6 +28,11 @@ public class CourseClient {
 		//course 3 students = 5
 		course3.addStudent("Bob");
 		course3.addStudent("Mr.Gracias");
+		course3.addStudent("Spongebob");
+		course3.addStudent("Darwin");
+		course3.addStudent("Gumball");
+		//remove1
+		course3.dropStudent("Spongebob");
 	
 		
 		//course1 number of students
@@ -40,6 +45,7 @@ public class CourseClient {
 		for (int i = 0; i < course1.getNumberOfStudents(); i++)
 			System.out.print(students[i] + ", ");
 		System.out.println();
+		
 		
 			
 		
@@ -75,6 +81,10 @@ public class CourseClient {
 		String[] students2 = course3.getStudents();
 		for (int i = 0; i < course3.getNumberOfStudents(); i++)
 			System.out.print(students2[i] + ", ");
+		System.out.println();
+		//moves up switched
+		for (int i = 0; i < course3.getNumberOfStudents(); i--)
+			System.out.println(students2[i + 1] + ",");
 		System.out.println();
 		
 				
