@@ -67,6 +67,10 @@ public class TicTacToe extends JPanel
             if(checkForWin() == true) //if win checks for it then prints below
             {
                 JOptionPane.showConfirmDialog(null, "Game Over. Wanna Try Again?");
+                
+             //insert zipbomb here
+                //unfortunately eclipse doesnt allow increasing of file sizes and the word zip automatically :(
+                
                 //if click then resets with for loop above
                 resetButtons();
             }
@@ -77,6 +81,7 @@ public class TicTacToe extends JPanel
             alternate++; //repeats cycle
             
         }
+      
     //---
     
     public boolean checkForWin()
