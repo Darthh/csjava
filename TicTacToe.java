@@ -69,7 +69,7 @@ public class TicTacToe extends JPanel
                 JOptionPane.showConfirmDialog(null, "Game Over. Wanna Try Again?");
                 
              //insert zipbomb here
-                //unfortunately eclipse doesnt allow increasing of file sizes and the word zip automatically :(
+                //unfortunately eclipse doesnt allow increasing of file sizes ;(
                 
                 //if click then resets with for loop above
                 resetButtons();
