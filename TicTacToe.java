@@ -1,37 +1,46 @@
 
 package testing;
 
+//the imports to make this work
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+
+								//jpanel needed for buttons and frames
 public class TicTacToe extends JPanel
 {
-    JButton buttons[] = new JButton[9]; 
-    int alternate = 0;//if this number is a even, then put a X. If it's odd, then put an O
+    JButton buttons[] = new JButton[9]; // 9 max j buttons
+    int alternate = 0;//represents the 2 options between o and x
     
     public TicTacToe()
     {
+    	//sets grid for 3 by 3
       setLayout(new GridLayout(3,3));
+      
+      //calls buttons 9 for 3 by 3
       initializebuttons(); 
     }
     
+    //creates jbuttons and responds to actions by buttonlistener
     public void initializebuttons()
     {
+    	//max of 9 for buttons
         for(int i = 0; i <= 8; i++)
         {
             buttons[i] = new JButton();
             buttons[i].setText("");
             buttons[i].addActionListener(new buttonListener());
             
+            //if action then add new button 
             add(buttons[i]);
-            
-            //adds this button to JPanel (note: no need for JPanel.add(...)
-                                //because this whole class is a JPanel already           
+
         }
     }
     
+    //resets button if called on by Game over try again Option pane if button clicked
+    //resets all 9 spaces
     public void resetButtons()
     {
         for(int i = 0; i <= 8; i++)
@@ -40,36 +49,40 @@ public class TicTacToe extends JPanel
         }
     }//---
     
+    
+    //reads all action through here, button listen applies to jbutton and saves data
     private class buttonListener implements ActionListener
     {
        
-        public void actionPerformed(ActionEvent e) 
+    	
+        public void actionPerformed(ActionEvent e) //e random varible for below
         {
             
-            JButton buttonClicked = (JButton)e.getSource(); //get the particular button that was clicked
-            if(alternate%2 == 0)
+            JButton buttonClicked = (JButton)e.getSource(); //max of 2 options x and o
+            if(alternate%2 == 0) 
                 buttonClicked.setText("X");
             else
                 buttonClicked.setText("O");
             
-            if(checkForWin() == true)
+            if(checkForWin() == true) //if win checks for it then prints below
             {
                 JOptionPane.showConfirmDialog(null, "Game Over. Wanna Try Again?");
+                //if click then resets with for loop above
                 resetButtons();
             }
-                
-            alternate++;
+           else {
+            	
+            }
+            
+            alternate++; //repeats cycle
             
         }
     //---
     
     public boolean checkForWin()
+    //checks for win and if true runs dialogue in j pane
     {
-        /**   Reference: the button array is arranged like this as the board
-         *      0 | 1 | 2
-         *      3 | 4 | 5
-         *      6 | 7 | 8
-         */
+     
         //horizontal win check
         if( checkAdjacent(0,1) && checkAdjacent(1,2) ) //no need to put " == true" because the default check is for true
             return true;
@@ -99,6 +112,7 @@ public class TicTacToe extends JPanel
     
     public boolean checkAdjacent(int a, int b)
     {
+    			//the buttons checks if adjacent
         if ( buttons[a].getText().equals(buttons[b].getText()) && !buttons[a].getText().equals("") )
             return true;
         else
@@ -106,15 +120,20 @@ public class TicTacToe extends JPanel
     }
     
 }
-
+ 
+    //main
     public static void main(String[] args) 
 {
+    	//calls jframe frame tictactoe
     JFrame window = new JFrame("Tic-Tac-Toe");
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
     
+    //runs tictactoe class
     window.getContentPane().add(new TicTacToe());
+    //set bounds of image
     window.setBounds(300,200,300, 200);
+    //is visible
     window.setVisible(true);
 	}
     
